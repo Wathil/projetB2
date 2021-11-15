@@ -1,0 +1,43 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../../scss/functions";
+
+// 2. Include any default variable overrides here
+// Default variable overrides
+$body-bg: #000;
+$body-color: #999;
+$primary:green;
+$danger: orange;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../../scss/variables";
+@import "../../scss/mixins";
+@import "../../scss/root";
+
+// Create your own map
+$yannick-colors: (
+  "yannick-color": #900
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $yannick-colors);
+
+// 4. Include any optional Bootstrap CSS as needed
+@import "../../scss/utilities";
+@import "../../scss/reboot";
+@import "../../scss/type";
+@import "../../scss/images";
+@import "../../scss/containers";
+@import "../../scss/grid";
+@import "../../scss/helpers";
+
+// 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../../scss/utilities/api";
+
+// 6. Add additional custom code here
+
+h1 {
+    color: tomato;
+}
